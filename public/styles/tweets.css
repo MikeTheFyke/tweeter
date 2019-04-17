@@ -1,0 +1,56 @@
+
+article{
+  opacity:0.5;
+  border: .5px solid black;
+  border-radius: 10px;
+  padding: 0px 0px 20px 0px;
+  margin:2em;
+  width:70%;
+  display:inline-block;
+  background-color: lightgrey;
+  display:flex;
+  justify-content:
+}
+
+article.tweets:hover {
+  opacity:1;
+}
+
+
+article.tweets header{
+  display:inline-block;
+  font-size:1.5em;
+  font-weight: 600;
+  height:50px;
+  width:100%;
+  padding: 0px 5px;
+  line-height:2.1;
+}
+
+article.tweets .username{
+  font-weight: 300;
+  float:right;
+  padding:0px 0px 0px 10px;
+  line-height:1em;
+  font-size:.75em;
+}
+
+article.tweets .avatar{
+  height:60px;
+  width:60px;
+  float:left;
+  padding: 5px;
+}
+
+.container-tweet{
+padding:0px 10px;
+text-align: left;
+width:auto;
+border-bottom: 1px solid black;
+}
+
+footer{
+  width: 100%;
+  float:left;
+  padding: 0px 10px;
+}
