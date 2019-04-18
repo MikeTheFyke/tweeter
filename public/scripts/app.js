@@ -52,7 +52,7 @@ $(document).ready(function() {
 
   function renderTweets(data) {
     data.forEach( (elements) => {
-      $('#tweets-container').append(createTweetElement(elements));
+      $('#tweets-container').prepend(createTweetElement(elements));
     })
   }
 
@@ -89,8 +89,15 @@ $(document).ready(function() {
             type : "post",
             url: "/tweets",
             data: $("#incomingTweet textarea").serialize(),
+            success: function () {
+            loadTweets();
+            },
+            errors: function () {
+            console.log("error");
+            }
           });
         }
+
     });
 
     function loadTweets () {
