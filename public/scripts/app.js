@@ -71,4 +71,18 @@ $(document).ready(function() {
     return tweets
   }
   renderTweets(data);
+
+    $('#incomingTweet').submit( function () {
+    var $button = $("#submitTweet");
+    //$button.on('click', function (event){
+    event.preventDefault();
+    console.log("Button clicked");
+    console.log(this);
+      $.ajax({
+        type : "post",
+        url: "/tweets",
+        data: $("#incomingTweet textarea").serialize(),
+      });
+    //});
+  });
 });
