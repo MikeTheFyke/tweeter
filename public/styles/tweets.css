@@ -52,3 +52,12 @@ footer{
   float:left;
   padding: 0px 10px;
 }
+
+/*.icons:hover {
+  display: block;
+}
+*/
+.icons {
+  /*display:none;*/
+  float:right;
+}
