@@ -91,6 +91,7 @@ $(document).ready(function() {
             data: $("#incomingTweet textarea").serialize(),
             success: function () {
             loadTweets();
+            $(".textArea").val("");
             },
             errors: function () {
             console.log("error");
@@ -100,15 +101,19 @@ $(document).ready(function() {
 
     });
 
-    function loadTweets () {
-      $.ajax({
-        type: 'GET',
-        url: "/tweets",
-        dataType: 'JSON'
-      })
-      .done( data => {
-          renderTweets(data)
-      })
-    }
+      function loadTweets () {
+        $.ajax({
+          type: 'GET',
+          url: "/tweets",
+          dataType: 'JSON'
+        })
+        .done( data => {
+            renderTweets(data)
+        })
+      }
     loadTweets()
+
+    $("#composeTweet").click(function() {
+      $(".new-tweet").slideToggle("slow")
+    });
 });

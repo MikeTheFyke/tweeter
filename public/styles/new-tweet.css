@@ -1,11 +1,12 @@
 .new-tweet {
+  display:none;
   border: .5px solid black;
   border-radius: 10px;
-  padding: 0px 10px 20px 10px;
+  padding: 0px 10px 30px 10px;
   margin:2em;
   width:70%;
   background-color: #eee;
-  display:inline-block;
+
 }
 
 h2 {
