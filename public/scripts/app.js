@@ -6,13 +6,13 @@ $(document).ready(function() {
     });
 
   function renderTweets(data) {
-    data.forEach( (elements) => {
-      $('#tweets-container').prepend(createTweetElement(elements));
+    data[0].tweets.forEach( (tweet) => {
+      $('#tweets-container').prepend(createTweetElement(tweet));
     })
   }
 
   function createTweetElement(tweetData) {
-    const tweet = tweetData['content']['text'];
+    const tweet = tweetData.content.text;
     const name = tweetData.user.name;
     const avatarsImg = tweetData.user.avatars.small;
     const tweeHandle = tweetData.user.handle;
@@ -21,6 +21,11 @@ $(document).ready(function() {
     const $createName = $('<div>').addClass("tweeterName").text(name);
     const $createTweet = $('<div>').addClass("tweeBody").text(tweet);
     const $createHandle = $('<p>').addClass("userTwee").text(tweeHandle);
+
+    const $iconContainer = $('<div class="icons"></div>');
+    const $flag = $('<i class="fas fa-flag"></i>');
+    const $retweet = $('<i class="fas fa-retweet"></i>');
+    const $heart = $('<i class="fas fa-heart"></i>');
 
     const tweets = $('<article class="tweets">').append($createAvatar).append($createName).append($createHandle).append($createTweet);
     return tweets
@@ -37,7 +42,7 @@ $(document).ready(function() {
        $('#specific-message').text('Empty input');
       };
 
-      if($('textarea', this).val().length > 140){//since the
+      if($('textarea', this).val().length > 140){
         $(".error").slideDown("slow");
       $('#specific-message').text('Too many characters')
       };
