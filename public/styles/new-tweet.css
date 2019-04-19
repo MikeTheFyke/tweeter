@@ -15,7 +15,7 @@
   display:none;
 }
 
-#error-messgae{
+#error-message{
   color:white;
 }
 
@@ -41,3 +41,4 @@ float:right;
 button, input{
   float:left;
 }
+
