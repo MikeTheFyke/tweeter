@@ -50,6 +50,10 @@
 $(document).ready(function() {
   console.log('DOM Content Loaded');
 
+    $("#composeTweet").click(function() {
+    $(".new-tweet").slideToggle("slow")
+    });
+
   function renderTweets(data) {
     data.forEach( (elements) => {
       $('#tweets-container').prepend(createTweetElement(elements));
@@ -77,30 +81,30 @@ $(document).ready(function() {
       event.preventDefault();
       console.log("Button clicked");
 
-      const textvalue = $(".textArea").val();
-      console.log(textvalue)
-      var textlength = textvalue.length;
-          if ( textlength > 140 ){
-            alert("Please Input a tweet shorter than 140 characters.");
-          } else if (textvalue == "") {
-              alert("Please Input a tweet.");
-          } else {
+      if(!$('textarea', this).val()){
+       $(".error").slideDown("slow");
+       $('#specific-message').text('Empty input');
+      };
+
+      if($('textarea', this).val().length > 140){//since the
+        $(".error").slideDown("slow");
+      $('#specific-message').text('Too many characters')
+      };
+
+      if(($('textarea', this).val()) && ($('textarea', this).val().length < 140)){
+      $(".error").slideUp("slow");
+      let text =$(this).serialize();
+
           $.ajax({
-            type : "post",
-            url: "/tweets",
-            data: $("#incomingTweet textarea").serialize(),
-            success: function () {
-            loadTweets();
-            $(".textArea").val("");
-            },
-            errors: function () {
-            console.log("error");
-            }
-          });
-        }
+          type: "POST",
+          url: '/tweets',
+          data: text,
+          }).done(function(response){
+          loadTweets();
+          })
 
-    });
-
+      }
+    })
       function loadTweets () {
         $.ajax({
           type: 'GET',
@@ -112,8 +116,4 @@ $(document).ready(function() {
         })
       }
     loadTweets()
-
-    $("#composeTweet").click(function() {
-      $(".new-tweet").slideToggle("slow")
-    });
 });
