@@ -6,6 +6,8 @@ $(document).ready(function() {
     });
 
   function renderTweets(data) {
+    $('#tweets-container').empty();
+    console.log(data[0]);
     data[0].tweets.forEach( (tweet) => {
       $('#tweets-container').prepend(createTweetElement(tweet));
     })
