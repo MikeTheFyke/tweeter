@@ -22,13 +22,23 @@ $(document).ready(function() {
     const $createTweet = $('<div>').addClass("tweeBody").text(tweet);
     const $createHandle = $('<p>').addClass("userTwee").text(tweeHandle);
 
-    const $iconContainer = $('<div class="icons"></div>');
-    const $flag = $('<i class="fas fa-flag"></i>');
-    const $retweet = $('<i class="fas fa-retweet"></i>');
-    const $heart = $('<i class="fas fa-heart"></i>');
+    const $iconContainer = $("<div>").addClass("icons");
+    const $flag = $("<i>").addClass("fas fa-flag");
+    const $retweet = $("<i>").addClass("fas fa-retweet");
+    const $heart = $("<i>").addClass("fas fa-heart");
 
-    const tweets = $('<article class="tweets">').append($createAvatar).append($createName).append($createHandle).append($createTweet);
-    return tweets
+    const $tweetData = $("<article>").addClass("tweet");
+    const $header = $("<header>");
+    const $footer = $("<footer>");
+    const $content = $("<div>").addClass("content");
+
+    $iconContainer.append($flag, $retweet, $heart);
+    $header.append($createAvatar, $createName, $createHandle);
+    $content.append($createTweet);
+    $footer.append($iconContainer);
+    $tweetData.append($header, $content, $footer);
+
+    return $tweetData;
   }
   //renderTweets(data);
 
