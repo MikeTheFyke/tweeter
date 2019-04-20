@@ -7,8 +7,8 @@ $(document).ready(function() {
 
   function renderTweets(data) {
     $('#tweets-container').empty();
-    console.log(data[0]);
-    data[0].tweets.forEach( (tweet) => {
+    data.forEach( (tweet) => {
+      console.log("Here is my tweet",tweet);
       $('#tweets-container').prepend(createTweetElement(tweet));
     })
   }
@@ -68,6 +68,7 @@ $(document).ready(function() {
           url: '/tweets',
           data: text,
           }).done(function(response){
+            console.log("Tweets are reloading", response);
           loadTweets();
           })
 
