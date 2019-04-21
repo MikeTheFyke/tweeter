@@ -48,8 +48,6 @@ Display & Behaviour Requirements
     - "Flag", "Re-tweet" and "Like" icons upon hoveing over the tweet, on the right
   
 
-
-
 Dependencies include
 - body-parser
 - chance
@@ -57,3 +55,6 @@ Dependencies include
 - mongodb
 
 This project uses port 8080 http://localhost:8080/
+
+!["Screenshot of tweets"](https://github.com/MikeTheFyke/tweeter/blob/feature/mongodb/docs/Screen%20Shot%2001%20-%20w:o%20Compose%20tweet.png)
+!["Screenshot of compose button"](https://github.com/MikeTheFyke/tweeter/blob/feature/mongodb/docs/Screen%20Shot%2002%20-%20w%20Compose%20tweet.png)
