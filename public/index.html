@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
+    <title>Fetter - Home Page</title>
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -37,8 +37,9 @@
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
       <img class="logo" src="/images/mandoSkull.png">
-      <span class="header">Tweeter</span>
-      <input id="composeTweet" type="button" value="Compose">
+      <span class="header">Fetter</span>
+      <button id="composeTweet" ><i class="fas fa-edit"></i>Compose</button>
+
     </nav>
     <!-- Page-specific (main) content here -->
     <main class="container">
@@ -50,30 +51,11 @@
             <span class="counter" src="/scripts/composer-char-counter.js">140</span>
           </form>
             <section class="error">
-                <h5 id="error-message">Error
-                </h5>
-                <h6 id="specific-message"></h6>
+                <h5 id="specific-message"></h6>
             </section>
       </section>
 
       <section id="tweets-container">
-<!--              <article class="tweets">
-
-          <header align="left">
-              <img class="avatar">
-              <div class="tweeterName"></div>
-              <p class="userTwee"></p>
-          </header>
-
-          <div class="tweeBody" style="background-color:white;"></div>
-          <footer>
-            <div class="icons">
-              <i class="fas fa-flag"></i>
-              <i class="fas fa-retweet"></i>
-              <i class="fas fa-heart"></i>
-            </div>
-          </footer>
-          </article> -->
       </section>
     </main>
 
