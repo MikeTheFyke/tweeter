@@ -1,13 +1,12 @@
 #nav-bar {
-display:flex;
-justify-content: space-between;
+position: fixed;
 color:#e8fdff;
 background-color:#00a087;
 height:80px;
-left:0px;
-right:0px;
+width:100%;
 padding-right:2em;
 padding-left:2em;
+z-index: 1;
 }
 
 #nav-bar .logo {
@@ -16,19 +15,24 @@ padding-left:2em;
   width:50px;
 }
 
-#nav-bar .header{
-  text-align: center;
+#nav-bar .header {
   font-size: 2em;
-  line-height:3.1;
+  position: relative;
+  top: -10px;
 }
 
-#composeTweet{
+#composeTweet {
+  opacity: 1;
   border: 1px solid black;
   color:#00a087;
   border-radius: 10px;
   padding: auto;
-  text-align: center;
-  font-size: 2em;
+  font-weight: bold;
   float:right;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
+#composeTweet:hover {
+  opacity: 0.5;
 }
