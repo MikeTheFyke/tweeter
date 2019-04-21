@@ -1,17 +1,59 @@
-# Tweeter Project
+Tweeter Project	: A single page app built with HTML, CSS, JS, JQuery and AJAX on the client-side and with Node, Express and MongoDB on the server-side.
 
-Tweeter is a simple, single-page Twitter clone.
+#Tweeter is a single page twitter clone. 
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+Functional Requirements
+- Prmarily a client-side single Page App (SPA)
+- The client-side app communicates with sewrver via AJAX
+- Tweets are persisted to MongoDB and survive server restart
 
-## Getting Started
+Display & Behaviour Requirements
 
-1. Fork this repository, then clone your fork of this repository.
-2. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
+- Navigation Bar
+  -> is fixed to the top
+  -> has padding on both sides
+  -> contains compose button
+  -> When a user clicks the Compose button in the navigation bar:
+      - if the compose tweet box is currently hidden, then it is shown and the textarea
+        inside it is auto focused.
+      - if the compose tweet box is currently showing, then it is hidden
+      - in either case, transitions between chown and hidden states should be hidden
 
-## Dependencies
+- Compose Tweet Box
+  -> is displayed above list of tweets
+  -> is hidden on page load
+  -> contains a form for submitting tweets, which itself contains:
+      - a textarea for new tweet content
+      - a left-aligned button for submitting new tweets
+  -> contains a character counter, right aligned which by default shows 140
+      - when a user types into the compose tweet textarea, the counter is updated to show how
+        many characters a user may still type.
+      - the character counter turns red when more than 140 characters have been typed into the 
+        compose tweet textarea and it shows how many characters obver the 140 limit have been typed.
+  -> when a user submits an invalid tweet (textarea is empty or contains more than 140 characters),
+        an appropriate error message is displayed.
+  -> when a user submits a valid tweet, the list of tweets is refreshed displaying the new tweet.
+  
+- Lists of Tweets
+  -> Displays tweets in reverse-chronological order, by creation time descending
 
-- Express
-- Node 5.10.x or above
+- Individual Tweets
+  -> Have a header, which contains ...
+    - avatar on the left
+    - name, on the left and after the avatar
+    - handle, on the right
+  -> Have a body, which contains the tweet text
+  -> have a footer, which displays ...
+    - how long ago the tweet was created, on the left
+    - "Flag", "Re-tweet" and "Like" icons upon hoveing over the tweet, on the right
+  
+
+
+
+Dependencies include
+- body-parser
+- chance
+- express
+- mongodb
+
+This project uses port 8080 http://localhost:8080/
