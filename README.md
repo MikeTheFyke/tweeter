@@ -3,8 +3,8 @@ Tweeter Project	: A single page app built with HTML, CSS, JS, JQuery and AJAX on
 #Tweeter is a single page twitter clone. 
 
 Functional Requirements
-- Prmarily a client-side single Page App (SPA)
-- The client-side app communicates with sewrver via AJAX
+- Primarily a client-side Single Page App (SPA)
+- The client-side app communicates with server via AJAX
 - Tweets are persisted to MongoDB and survive server restart
 
 Display & Behaviour Requirements
